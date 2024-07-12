@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17
 WORKDIR /app
-COPY --from=build /app/target/*.jar /app/users.jar
+COPY --from=build /app/target/*.jar /app/banco.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "users.jar"]
+ENTRYPOINT ["java", "-jar", "banco.jar"]
